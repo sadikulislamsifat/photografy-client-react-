@@ -1,14 +1,14 @@
 import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvide';
-import Login from './../Login/Login';
+// import Login from './../Login/Login';
 
 const Header = () => {
 
   const {user, logOut} = useContext(AuthContext);
 
 
-
+ console.log(user)
 
   const handleLogOut = () => {
     logOut()
@@ -20,7 +20,7 @@ const Header = () => {
   <li className='font-semibold'><Link to='/'>Home</Link></li>
   <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
   {
-    user?.email ? <li className='font-semibold'><Link to='/login'>Login</Link></li>
+    user?.uid ? <li className='font-semibold'><Link to='/login'>Login</Link></li>
     : 
     <li onClick={handleLogOut} className='font-semibold'><Link to=''>Sing Out</Link></li>
   }
@@ -63,7 +63,7 @@ const Header = () => {
         </li>
         
         {
-          user?.email ? 
+          user?.uid ? 
           <li onClick={handleLogOut} className='font-semibold'><Link to='/'>Sing Out</Link></li>
           :
           <li className='font-semibold'><Link to='/login'>Login</Link></li>
