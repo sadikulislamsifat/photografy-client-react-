@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import { useLoaderData } from 'react-router-dom';
 import BlogItem from './BlogItem';
+import useTitle from './../../hooks/useTitle';
 
 const Blog = () => {
     
     const [blogData, setBlogData] = useState([]);
+
+    useTitle("Blog")
 
     useEffect(() => {
         fetch('http://localhost:5000/blog')

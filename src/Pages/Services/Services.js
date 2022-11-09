@@ -1,9 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Service from './Service';
+import useTitle from './../../hooks/useTitle';
 
 const Services = () => {
     const allData = useLoaderData();
+    useTitle('Services')
     return (
         <div>
             <div style={{height: '35vh', width: '100%'}} className= "flex bg-base-200 justify-center items-center ">

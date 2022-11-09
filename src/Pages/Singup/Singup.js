@@ -5,11 +5,13 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvide';
 import { Result } from 'postcss';
 import GoogleLogin from './GoogleLogin/GoogleLogin';
+import useTitle from './../../hooks/useTitle';
 
 
 const Singup = () => {
   const {createUser} = useContext(AuthContext);
 
+  useTitle('Sing Up')
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.target;

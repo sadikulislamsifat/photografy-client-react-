@@ -5,10 +5,12 @@ import { IoEyeOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import GoogleLogin from '../Singup/GoogleLogin/GoogleLogin';
 import { AuthContext } from '../../context/AuthProvider/AuthProvide';
+import useTitle from './../../hooks/useTitle';
 
 const Login = () => {
   const {singIn} =  useContext(AuthContext);
 
+  useTitle('Login')
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.target;

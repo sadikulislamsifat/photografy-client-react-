@@ -4,8 +4,10 @@ import Blog from '../Blog/Blog';
 import NewsLatter from '../NewsLatter/NewsLatter';
 import Photography from '../Photography/Photography';
 import Services from '../Services/Services';
+import useTitle from './../../hooks/useTitle';
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <Banner></Banner>
