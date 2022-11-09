@@ -1,6 +1,7 @@
 import Main from "../../layout/Main";
 import Blog from "../../Pages/Blog/Blog";
 import Login from "../../Pages/Login/Login";
+import Services from "../../Pages/Services/Services";
 import Home from './../../Pages/Home/Home';
 import Singup from './../../Pages/Singup/Singup';
 
@@ -28,7 +29,12 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>,
-                loader: () => fetch('http://localhost:5000/blog')
+                loader: () => fetch('http://localhost:5000/services')
+            },
+            {
+                path: '/services',
+                element: <Services></Services>,
+                loader: () => fetch('http://localhost:5000/services')
             }
         ],
     }

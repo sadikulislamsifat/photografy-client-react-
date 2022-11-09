@@ -20,9 +20,11 @@ const Header = () => {
   <li className='font-semibold'><Link to='/'>Home</Link></li>
   <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
   {
-    user?.uid ? <li className='font-semibold'><Link to='/login'>Login</Link></li>
-    : 
+    user?.uid ? 
     <li onClick={handleLogOut} className='font-semibold'><Link to=''>Sing Out</Link></li>
+    : 
+    <li className='font-semibold'><Link to='/login'>Login</Link></li>
+    
   }
  
   </>
