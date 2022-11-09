@@ -4,6 +4,7 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvide';
 // import Login from './../Login/Login';
 import { FaUserCircle } from "react-icons/fa";
 import logo from '../../images/logo/logo.jpg';
+import Service from './../Services/Service';
 
 const Header = () => {
 
@@ -20,6 +21,7 @@ const Header = () => {
 
   const menuItems = <>
   <li className='font-semibold'><Link to='/'>Home</Link></li>
+  <li className='font-semibold'><Link to='/services'>Service</Link></li>
   <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
   {
     user?.uid ? 
@@ -34,7 +36,7 @@ const Header = () => {
   
     return (
         <div>
-            <div className="navbar bg-base-100 py-4">
+            <div className="navbar bg-sky-900 py-4 mb-4">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -48,7 +50,7 @@ const Header = () => {
     <a className="btn btn-ghost normal-case text-xl text-rose-500">Photography</a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal p-0">
+    <ul className="menu menu-horizontal p-0 text-white">
     {menuItems}
     </ul>
   </div>

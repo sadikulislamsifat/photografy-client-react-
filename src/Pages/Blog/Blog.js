@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useLoaderData } from 'react-router-dom';
 import BlogItem from './BlogItem';
 
 const Blog = () => {
-    const blogData = useLoaderData();
-    console.log(blogData)
+    
+    const [blogData, setBlogData] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/blog')
+        .then(res => res.json())
+        .then(data => setBlogData(data))
+    },[])
+    // const blogData = useLoaderData();
+    // console.log(blogData)
     
     return (
         <div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BsTwitter, BsInstagram } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
+import logo from '../../images/logo/logo.jpg'
 
 
 const Footer = () => {
@@ -9,7 +10,8 @@ const Footer = () => {
             <footer className="footer p-10 bg-neutral text-neutral-content">
   <div>
         <BsTwitter></BsTwitter>
-    <p>ACME Industries Ltd.<br/>Providing reliable tech since 1992</p>
+        <img className='h-24 rounded-md' src={logo} alt=""/>
+    <p>Photography is the art, application, and practice of creating durable images by recording light, either electronically by means of an image sensor.</p>
   </div> 
   <div>
     <span className="footer-title">Social</span> 

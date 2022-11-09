@@ -16,7 +16,7 @@ const Services = () => {
            </div>
 
         <div className='my-8'>
-            <h3 className='text-2xl '>My Services</h3>
+            <h3 className='text-2xl mb-3'>My Services</h3>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
                     allData.map(service => <Service

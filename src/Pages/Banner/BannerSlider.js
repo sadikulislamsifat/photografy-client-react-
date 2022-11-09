@@ -9,15 +9,18 @@ const BannerSlider = ({slide}) => {
     <div className='carousel-img'>
     <img style={{height: '100vh',}} src={image} alt='' className="w-full " />
     </div>
-    <div className="absolute flex justify-end transform -translate-y-1/2 left-3 text-xl md:left-24 top-1/4">
-     <h1 className='md:text-6xl font-bold text-white'>
+    <div className="absolute flex justify-end transform -translate-y-1/2 left-3 text-xl md:left-24 top-1/3">
+    <div className='hidden md:block'>
+     <h1 className='md:text-6xl banner-title font-bold text-white'>
+      Photography
      </h1>
+     <p className='text-white md:text-xl mt-4 w-3/5'>Photography is the art, application, and practice of creating durable images by recording light, either electronically by means of an image sensor.</p>
+     </div>
     </div>
-    <div className="absolute flex justify-end  transform -translate-y-1/2 md:w-2/5 left-3 mt-4 md:mt-0 md:left-24 top-1/2">
-     <p className='text-white md:text-xl'></p>
+    <div className="absolute flex justify-end  transform -translate-y-1/2 md:w-2/5 left-3 mt-4 md:mt-0 md:left-24 top-1/3">
+   
     </div>
     <div className="absolute flex justify-start  transform -translate-y-1/2 w-2/5 left-3 mt-6 md:mt-0 md:left-24 top-3/4">
-    <button className="btn btn-secondary mr-6">Button</button>
     
     </div>
     <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
