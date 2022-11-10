@@ -6,7 +6,7 @@ const btn = [1,2,3,4,5]
 
 const Reviwes = ({service}) => {
     const {_id, title, price} = service;
-    console.log(service)
+    console.log(title)
     const {user} = useContext(AuthContext);
     const [rating, setRating] = useState(5)
     
@@ -69,7 +69,7 @@ const Reviwes = ({service}) => {
            <input type="text" name='name' placeholder="Name" className="input input-bordered w-full " />
            <input type="email" name='email' defaultValue={user?.email} readOnly placeholder="Email" className="input input-bordered mt-5 md:mt-0 md:ml-2 w-full " />
             </div>
-            <textarea name='message' className="textarea h-56 mt-5 w-full textarea-bordered" placeholder="Messages"></textarea>
+            <textarea required name='message' className="textarea h-56 mt-5 w-full textarea-bordered" placeholder="Messages"></textarea>
             <div className='my-8 '>
                 <span className='text-xl font-semibold'>Rating</span>
             {

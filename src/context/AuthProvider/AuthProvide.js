@@ -9,18 +9,22 @@ import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithE
 
 const AuthProvide = ({children}) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true)
 
 
 
     const loginProvider = (Provider) => {
+        setLoading(true);
         return signInWithPopup(auth, Provider)
     }
 
     const createUser =  (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const singIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     };
 
@@ -36,6 +40,7 @@ const AuthProvide = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser =>{
          //   console.log(currentUser)  ;
            setUser(currentUser);
+           setLoading(false);
          });
          return () => {
              return unsubscribe();
@@ -48,6 +53,7 @@ const AuthProvide = ({children}) => {
         user,
         singIn,
         logOut,
+        loading
         
 
 

@@ -4,7 +4,7 @@ import Review from './Review';
 
 const MyReviews = () => {
     const {user} = useContext(AuthContext);
-    const [reviews , setReviews] = useState({});
+    const [reviews , setReviews] = useState([]);
 
 
     useEffect(() => {
@@ -15,12 +15,30 @@ const MyReviews = () => {
 
     }, [user?.email])
 
+    const handleDelete = id => {
+
+        const proceed = window.confirm("Are you sure you want to delete this review ?")
+        if(proceed){
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.deletedCount > 0){
+                    alert('Deleted succesfully')
+                }
+            })
+        }
+    }
+
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+        <div className='p-5 md:p-9 grid grid-cols-1 md:grid-cols-2 gap-10'>
           {
             reviews.map(review => <Review
             key={reviews._id}
             review={review}
+            handleDelete={handleDelete}
             ></Review>)
           }
         </div>

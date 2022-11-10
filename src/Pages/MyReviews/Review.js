@@ -3,12 +3,14 @@ import { BiTrash } from "react-icons/bi";
 import { FaUserCircle } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 
-const Review = ({review}) => {
-    const {rating, message, name, photo} = review;
+const Review = ({review, handleDelete}) => {
+    const {_id, rating, message, name, photo , serviceName} = review;
 
     if(rating >= 5){
 
     }
+
+ 
 
     return (
         <div style={{minHeight: '250px'}} className='border relative p-7 rounded-lg card'>
@@ -17,11 +19,12 @@ const Review = ({review}) => {
                     <p className='text-xl'>{rating}</p>
                     <AiFillStar className='text-yellow-500 text-xl'></AiFillStar>
                 </div>
-                <div>
-                    <BiTrash className='text-3xl text-red-600'></BiTrash>
+                <div >
+                   <button onClick={() =>handleDelete(_id)}> <BiTrash className='text-3xl text-red-600'></BiTrash></button>
                 </div>
             </div>
             <div className='my-5'>
+                {/* <p>{serviceName}</p> */}
                 <p>{message}</p>
             </div>
               
