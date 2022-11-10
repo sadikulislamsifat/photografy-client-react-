@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import img from '../../images/login.webp';
 import { FcGoogle } from "react-icons/fc";
 import { IoEyeOutline } from "react-icons/io5";
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import GoogleLogin from '../Singup/GoogleLogin/GoogleLogin';
 import { AuthContext } from '../../context/AuthProvider/AuthProvide';
 import useTitle from './../../hooks/useTitle';
@@ -21,6 +21,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        Navigate('/')
     })
     .catch(e => {
       console.error(e)

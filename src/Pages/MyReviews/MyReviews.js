@@ -38,7 +38,8 @@ const MyReviews = () => {
     }
 
     return (
-        <div className='p-5 min-h-screen md:p-9 grid grid-cols-1 md:grid-cols-2 gap-10'>
+       <div className='min-h-screen'>
+         <div className='p-5  md:p-9 grid grid-cols-1 md:grid-cols-2 gap-10'>
           {
             reviews.map(review => <Review
             key={reviews._id}
@@ -47,6 +48,7 @@ const MyReviews = () => {
             ></Review>)
           }
         </div>
+       </div>
     );
 };
 
