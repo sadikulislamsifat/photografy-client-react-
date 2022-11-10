@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Reviwes from '../Reviwes/Reviwes';
 // import Service from './Service';
 
 const ServiceDes = () => {
@@ -17,6 +18,9 @@ const ServiceDes = () => {
             <h1>hi</h1>
             <h1>hi</h1>
             <h1>hi</h1>
+
+
+            <Reviwes service={service}></Reviwes>
         </div>
     );
 };
