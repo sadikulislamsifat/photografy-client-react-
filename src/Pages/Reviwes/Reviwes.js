@@ -20,6 +20,17 @@ const Reviwes = ({service}) => {
         const form = event.target;
         const name = form.name.value;
         const message = form.message.value;
+
+        const reviweDetails = {
+            service : _id,
+            serviceName: title,
+             name,
+            message,
+            rating
+
+        }
+
+
     }
     return (
         <div>
