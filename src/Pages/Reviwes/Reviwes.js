@@ -21,6 +21,8 @@ const Reviwes = ({service}) => {
         const name = form.name.value;
         const message = form.message.value;
 
+
+
         const reviweDetails = {
             service : _id,
             serviceName: title,
@@ -31,12 +33,29 @@ const Reviwes = ({service}) => {
         }
 
 
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers:{
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(reviweDetails)
+        })
+
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        if(data.acknowledged){
+            alert('Review sent successfully')
+        }
+        form.reset();
+        })
+        .catch(e => console.error(e))
     }
     return (
-        <div>
+        <div className='my-9'>
           <div style={{height: '30vh', width: '100%'}} className=" bg-base-200 flex justify-center items-center">
            <div className=' text-center'>
-            <p className='mb-4 text-5xl'>Experience</p>
+            <p className='mb-4 text-5xl'>Share Experience</p>
             <p className='text-xl '>Please share your experience with us.</p>
            </div>
            </div>
@@ -44,13 +63,9 @@ const Reviwes = ({service}) => {
            <form onSubmit={handlePlaceReview} className='mt-5 md:my-9 flex justify-center  w-full'>
             <div>
                 
-           <div className=' ms-auto flex'>
-            <div>
-            <input type="text" name='name' placeholder="Name" className="input input-bordered w-full " />
-            </div>
-            <div>
-            <input type="email" name='email' defaultValue={user?.email} readOnly placeholder="Email" className="input input-bordered ml-5 w-full " />
-            </div>
+           <div className='grid grid-cols-1 md:grid-cols-2'>
+           <input type="text" name='name' placeholder="Name" className="input input-bordered w-full " />
+           <input type="email" name='email' defaultValue={user?.email} readOnly placeholder="Email" className="input input-bordered mt-5 md:mt-0 md:ml-2 w-full " />
             </div>
             <textarea name='message' className="textarea h-56 mt-5 w-full textarea-bordered" placeholder="Messages"></textarea>
             <div className='my-8 '>
