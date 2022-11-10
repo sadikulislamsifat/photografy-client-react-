@@ -28,7 +28,9 @@ const Reviwes = ({service}) => {
             serviceName: title,
              name,
             message,
-            rating
+            rating,
+            email : user?.email,
+            photo: user?.photoURL
 
         }
 
