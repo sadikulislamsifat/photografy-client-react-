@@ -11,7 +11,7 @@ const MyReviews = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://photographer-server-gamma.vercel.app/reviews?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setReviews(data))
 
@@ -22,7 +22,7 @@ const MyReviews = () => {
 
         const proceed = window.confirm("Are you sure you want to delete this review ?")
         if(proceed){
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://photographer-server-gamma.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())

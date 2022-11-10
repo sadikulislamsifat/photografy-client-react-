@@ -10,7 +10,7 @@ const Blog = () => {
     useTitle("Blog")
 
     useEffect(() => {
-        fetch('http://localhost:5000/blog')
+        fetch('https://photographer-server-gamma.vercel.app/blog')
         .then(res => res.json())
         .then(data => setBlogData(data))
     },[])

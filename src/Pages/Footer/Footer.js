@@ -6,7 +6,7 @@ import logo from '../../images/logo/logo.jpg'
 
 const Footer = () => {
     return (
-        <div>
+        <div className='mt-5'>
             <footer className="footer p-10 bg-neutral text-neutral-content">
   <div>
         <BsTwitter></BsTwitter>

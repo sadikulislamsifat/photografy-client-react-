@@ -21,7 +21,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/services')
+                loader: () => fetch('https://photographer-server-gamma.vercel.app/services')
             },
             {
                 path: '/login',
@@ -38,11 +38,11 @@ const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader: () => fetch('http://localhost:5000/services')
+                loader: () => fetch('https://photographer-server-gamma.vercel.app/services')
             },
             {
                 path: '/services/:id',
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
+                loader: ({params}) => fetch(`https://photographer-server-gamma.vercel.app/services/${params.id}`),
                 element: <PrivateRoutes><ServiceDes></ServiceDes></PrivateRoutes>
             },
             {

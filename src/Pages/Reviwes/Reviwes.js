@@ -35,7 +35,7 @@ const Reviwes = ({service}) => {
         }
 
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://photographer-server-gamma.vercel.app/reviews', {
             method: 'POST',
             headers:{
                 'content-type': 'application/json'
