@@ -1,14 +1,21 @@
 import React from 'react';
 import { BiTrash } from "react-icons/bi";
 import { FaUserCircle } from "react-icons/fa";
+import { AiFillStar } from "react-icons/ai";
 
 const Review = ({review}) => {
     const {rating, message, name, photo} = review;
+
+    if(rating >= 5){
+
+    }
+
     return (
-        <div style={{minHeight: '250px'}} className='border p-7'>
-            <div className='flex justify-between relative'>
-                <div>
-                    <h5 className='text-xl'>{rating}Star</h5>
+        <div style={{minHeight: '250px'}} className='border relative p-7 rounded-lg card'>
+            <div className='flex justify-between '>
+                <div className=' flex items-center'>
+                    <p className='text-xl'>{rating}</p>
+                    <AiFillStar className='text-yellow-500 text-xl'></AiFillStar>
                 </div>
                 <div>
                     <BiTrash className='text-3xl text-red-600'></BiTrash>
@@ -17,7 +24,8 @@ const Review = ({review}) => {
             <div className='my-5'>
                 <p>{message}</p>
             </div>
-                <div className='flex items-center  bottom-0'>
+              
+               <div className='flex items-center absolute  bottom-0 mb-3'>
                     
                     {
                         photo ?
@@ -27,8 +35,7 @@ const Review = ({review}) => {
                     }
                     <p className='ml-3 '>{name}</p>
                 </div>
-            
-        </div>
+              </div>
     );
 };
 
